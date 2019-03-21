@@ -89,8 +89,8 @@ int main()
   xt::xarray<int> I = xt::where(xt::greater(r, 1.), int(1), int(0));
   xt::xarray<int> mask = xt::zeros<int>(I.shape());
 
-  xt::xarray<int> data_S2 = S2({1,11,11}, I, I, mask, mask);
-  xt::xarray<int> data_C2 = C2({1,11,11}, I, I, mask, mask);
+  xt::xarray<int> data_S2 = S2({1,101,101}, I, I, mask, mask);
+  xt::xarray<int> data_C2 = C2({1,101,101}, I, I, mask, mask);
 
   if (!(xt::all(xt::equal(data_S2, data_S2))))
     throw std::runtime_error("Result should be the same for binary input");
